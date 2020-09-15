@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    margin-bottom: 3.2rem;
+    margin-top: 2rem;
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+
+.details {
+    margin: 0 0 1.4rem 0;
+    padding: 0;
+    border: solid black;
+    border-width: 1px 0 0 0;
+    p {
+        clear: both;
+    }
+}
+
+.input {
+    font-size: $body-font-size;
+    line-height: $line-height;
+    font-family: $font-body;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    padding: 0.6rem 0.6rem;
+    box-sizing: border-box;
+    width: 32rem;
+    margin-bottom: 1.4rem;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 667px) {
+    .input {
+        width: 100%;
+    }
+}

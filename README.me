@@ -1,0 +1,15 @@
+Specifikatiion
+Appen ska utgå från användarens position. Användaren ska kunna välja bland olika brottskategorier och få de närmaste brotten listade utifrån avståndet från den punkt där användaren befinner sig. Därefter ska användaren kunna välja ett brott och kunna se det utplacerat på en karta. Det ska också gå att se en detaljvy där brottet beskrivs liksom relevant statistik för kommunen där brottsplatsen är belägen.
+
+Datakällor
+Jag ämnar bruka följande API:er:
+https://polisen.se/api/events
+http://api.kolada.se/v2/
+https://nominatim.openstreetmap.org/
+
+Jag valde polisens api för att få tillgång till polisens senaste händelser. Api:et är lättanvänt, men tar väldigt lång tid att ladda (uppemot 30sek). Kolada använde jag för att få tillgång till kommunstatistik utifrån vald kommun. Det tog lite längre tid att sätta sig in i än polisens api eftersom det var rätt omfattande. Openstreetmaps api använde jag för att få ut kommunnamnet utifrån positionsdata. Det behövdes eftersom polisens api inte innehöll information om kommun och koladas api krävde kommunnamn för användning. 
+
+Arkitektur
+Jag använder mig av Mithril samt Vanilla Javascript för funktionaliteten. För styling använder jag mig av SASS.
+
+Jag har använt två olika kataloger för mina moduler. I models-katalogen har jag placerat moduler med diverse hjälpfunktioner samt arrayer och objekt som ska vara tillgängliga för  olika moduler. I index.js definieras de olika routerna. Den första vy som laddas finns i near.js. I layout.js hanteras själva navigationen och menyraderna. 
